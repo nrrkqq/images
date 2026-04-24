@@ -49,7 +49,7 @@ local concat = table.concat
 --
 -- Library init
 
-_G.library = {
+getgenv().library = {
 	directory = "rehydrafree",
 	folders = {
 		"/fonts",
