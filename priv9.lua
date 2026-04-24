@@ -879,17 +879,7 @@ function library:watermark(options)
 		TextSize = 12,
 		BackgroundColor3 = rgb(255, 255, 255),
 	})
-
-	library.watermark_gradient = library:create("UIGradient", {
-		Color = rgbseq({
-			rgbkey(0, themes.preset["1"]),
-			rgbkey(0.5, themes.preset["2"]),
-			rgbkey(1, themes.preset["3"]),
-		}),
-		Parent = outline,
-	})
 	--
-
 	function cfg.update_text(text)
 		text_title.Text = text
 	end
@@ -2585,10 +2575,12 @@ function library:init_config(window)
 	local section = main:column({}):section({ name = "menu options", size = 1, default = true })
 
 	section:keybind({
-		name = "Menu bind",
+		name = "menu bind",
+
 		callback = function(bool)
 			window.toggle_menu(bool)
 		end,
+
 		default = true,
 	})
 	section:colorpicker({
@@ -2597,12 +2589,6 @@ function library:init_config(window)
 			library:update_theme("1", color)
 
 			library.gradient.Color = rgbseq({
-				rgbkey(0, themes.preset["1"]),
-				rgbkey(0.5, themes.preset["2"]),
-				rgbkey(1, themes.preset["3"]),
-			})
-
-			library.watermark_gradient.Color = rgbseq({
 				rgbkey(0, themes.preset["1"]),
 				rgbkey(0.5, themes.preset["2"]),
 				rgbkey(1, themes.preset["3"]),
@@ -2620,12 +2606,6 @@ function library:init_config(window)
 				rgbkey(0.5, themes.preset["2"]),
 				rgbkey(1, themes.preset["3"]),
 			})
-
-			library.watermark_gradient.Color = rgbseq({
-				rgbkey(0, themes.preset["1"]),
-				rgbkey(0.5, themes.preset["2"]),
-				rgbkey(1, themes.preset["3"]),
-			})
 		end,
 		color = themes.preset["2"],
 	})
@@ -2635,12 +2615,6 @@ function library:init_config(window)
 			library:update_theme("3", color)
 
 			library.gradient.Color = rgbseq({
-				rgbkey(0, themes.preset["1"]),
-				rgbkey(0.5, themes.preset["2"]),
-				rgbkey(1, themes.preset["3"]),
-			})
-
-			library.watermark_gradient.Color = rgbseq({
 				rgbkey(0, themes.preset["1"]),
 				rgbkey(0.5, themes.preset["2"]),
 				rgbkey(1, themes.preset["3"]),
